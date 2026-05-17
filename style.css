@@ -3,19 +3,26 @@ html {
 }
 
 body {
+    font-family: "Montserrat", sans-serif;
     background-color: #111111;
 }
 
-.container-menu {
+.container-barra {
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header {
+    position: sticky;
     top: 0;
-    background: #ffffff00;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
     z-index: 99;
+    padding: 0.3rem 0;
 }
 
 nav {
@@ -25,15 +32,33 @@ nav {
     padding: 0.4rem 0;
 }
 
-.sino-menu {
-    max-width: 6rem;
-    display: flex;
-    justify-content: flex-start;
+.trofeu-barra {
+    max-width: 4rem;
+    height: auto;
+    display: block;
 }
 
-nav .menu a{
-    color: #FFFFFF;
-    font-family: Castoro Titling;
+.container-barra + hr {
+  width: 90%;
+  margin: 0.5rem auto 0;
+  height: 2px;
+  background: #ffffff;
+  border: none;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.menu a{
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-optical-sizing: auto;
     text-decoration: none;
     padding: 0.4rem 0.7rem;
     border-radius: 20px;
@@ -42,6 +67,163 @@ nav .menu a{
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-nav .menu a:hover {
-    background-color: #185503;
+.menu a:hover {
+    background-color: #fded49; 
+    color: #000000;
+    box-shadow: 0 0 15px rgba(253, 237, 73, 0.6);
+}
+
+.container-inicio {
+    min-height: 100vh; 
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 10%; 
+    background-color: #111111; 
+}
+
+.inicio-container {
+    max-width: 550px; 
+    z-index: 2; 
+}
+
+.titulo-inicio {
+    font-family: "Zen Dots", sans-serif;
+    color: #ffffff;
+    font-size: 3.5rem; 
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.text-inicio {
+    font-family: "Montserrat", sans-serif;
+    color: #aaaaaa; 
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.inicio-imagem {
+    max-width: 500px;
+    position: relative;
+}
+
+.pc-inicio {
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.botao-inicio {
+    background-color: #fded49;
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* From Uiverse.io by kleenpulse */ 
+.btn {
+  --border-color: linear-gradient(-45deg, #ff0000, #ffde22, #e6fffb);
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #111111;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.6em 1.5em;     
+  font-size: 26px;          
+  
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    /* Top-left */ 0% var(--curve-size),
+    var(--curve-size) 0,
+    /* top-right */ 100% 0,
+    100% calc(100% - var(--curve-size)),
+    /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+    /* bottom-right 2 */ 0 100%
+  );
+  transition: color 250ms;
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+
+  50% {
+    background-position: 70% 100%;
+  }
+
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    /* Top-left */ var(--border-width)
+      calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+    /* Top-left */ calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+  color: #000000;
 }
