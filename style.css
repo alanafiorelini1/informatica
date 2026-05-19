@@ -20,7 +20,7 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0);
+    background: #111111a8;
     z-index: 99;
     padding: 0.3rem 0;
 }
@@ -227,3 +227,20 @@ nav {
 .btn:where(:hover, :focus) {
   color: #000000;
 }
+
+#fundamentos {
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.titulo-fundamentos {
+  text-align: center;
+  font-family: "Zen Dots", sans-serif;
+  color: #ffffff;
+  font-size: 3.0rem; 
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
